@@ -1,6 +1,3 @@
-
-
-
 @extends('backend.admin.layouts.master')
 
   @section('content')
@@ -16,7 +13,7 @@
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary"><Center>Posts Table</Center></h6>
+              <h6 class="m-0 font-weight-bold text-primary">Company Table</h6>
 
             </div>
             <div class="card-body">
@@ -25,10 +22,10 @@
                   <thead>
                     <tr>
                       <th></th>
-                      <th>Name</th>
-                      <th>Country</th>
-                      <th>Email</th>
+                      <th>Post Title</th>
+                      <th>Image</th>
                       <th>Status</th>
+                      <th>Date</th>
                       <th>Action</th>
                     </tr>
                   </thead>
@@ -36,9 +33,9 @@
                   	                @foreach($view as $value)
                   <tr>
                     <td></td>
-                    <td>{{$value->name}}</td>
-                    <td>{{$value->country}}</td>
-                    <td>{{$value->email}}</td>
+                    <td>{{$value->title}}</td>
+                    <td><img src="{{asset('upload/post/'.$value->image)}}" width="80px" height="50px"></td>
+                    <td>{{$value->created_at}}</td>
 
                     <td>
                          @if ($value->status == 1)
@@ -61,8 +58,7 @@
                       </td>
                   </tr>
                   @endforeach
-                    
-               
+
 
                   </tbody>
                 </table>

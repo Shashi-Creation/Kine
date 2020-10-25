@@ -23,6 +23,12 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/admin/user', 'UserController@index');
 Route::get('/admin/user/create', 'UserController@create');
 Route::post('/admin/user/store', 'UserController@store');
-Route::get('/admin/user/view/{id}', 'UserController@view');
+Route::get('/admin/user/view/{id}', 'UserController@userview');
 Route::get('/admin/user/edit/{id}', 'UserController@edit');
 Route::post('/admin/user/edit/update/{id}', 'UserController@update');
+
+//post routes
+Route::get('/admin/post', 'PostsController@viewpost');
+Route::get('/admin/post/create', 'PostsController@home');
+Route::post('/admin/post/store', 'PostsController@store');
+Route::get('/admin/post/view/{id}', 'PostsController@view');

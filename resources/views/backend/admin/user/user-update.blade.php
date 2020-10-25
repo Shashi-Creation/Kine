@@ -60,6 +60,22 @@
       @enderror
     </div>
 
+    <div class="form-group col-md-12">
+      <label for="inputEmail4">Password</label>
+      <input type="password" class="form-control" id="password" name="password" value="{{$data->password}}" placeholder="Password" autocomplete="new-password">
+      @error('password')
+      <div class="alert" style="color: red;padding-left: 0px;">{{ $message }}</div>
+      @enderror
+    </div>
+    <div class="form-group col-md-12">
+      <label for="inputEmail4">Confirm Password</label>
+      <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" placeholder="Confirm Password">
+      @error('password_confirmation')
+      <div class="alert" style="color: red;padding-left: 0px;">{{ $message }}</div>
+      @enderror
+    </div>
+
+
    <div class="form-group col-md-12" style="padding-bottom: 10px;">
             <label for="inputState">State</label>
           <select id="inputState" class="form-control" name="status">
@@ -97,6 +113,7 @@
     <div class="form-group col-md-4">
     </div>
     <div class="form-group col-md-4">
+      <button type="submit" class="btn btn-primary">Submit</button>
   <a href="{{url('/admin/user')}}"  class="btn btn-info">Back</a>
 
     </div>
@@ -114,6 +131,5 @@
 
         </div>
         <!-- /.container-fluid -->
-
 
   @stop
