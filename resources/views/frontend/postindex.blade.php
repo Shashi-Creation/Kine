@@ -69,49 +69,49 @@
         <div class="row align-items-stretch retro-layout-2">
 
           <div class="col-md-4">
-            <a href="single.html" class="h-entry img-5 h-100 gradient" style="background-image: url('{{url('upload/post/'.$first->image)}}')">
+            <a href="{{url('post/view')}}/{{$first->id}}" class="h-entry img-5 h-100 gradient" style="background-image: url('{{url('upload/post/'.$first->image)}}')">
               
               <div class="text">
                 <div class="post-categories mb-3">
                   <span class="post-category bg-danger">Travel</span>
                   <span class="post-category bg-primary">Food</span>
                 </div>
-                <h2>The AI magically removes moving objects from videos.</h2>
-                <span class="date">July 19, 2019</span>
+                <h2>{{$first->title}}</h2>
+                <span class="date">{{ date('j F, Y', strtotime($first->created_at)) }}</span>
               </div>
             </a>
           </div>
 
           <div class="col-md-4">
-            <a href="single.html" class="h-entry mb-30 v-height gradient" style="background-image: url('{{url('upload/post/'.$second[0]->image)}}');"> 
+            <a href="{{url('post/view')}}/{{$second[0]->id}}" class="h-entry mb-30 v-height gradient" style="background-image: url('{{url('upload/post/'.$second[0]->image)}}');"> 
               
               <div class="text">
-                <h2>The AI magically removes moving objects from videos.</h2>
-                <span class="date">July 19, 2019</span>
+                <h2>{{$second[0]->title}}</h2>
+                <span class="date">{{ date('j F, Y', strtotime($second[0]->created_at)) }}</span>
               </div>
             </a>
-            <a href="single.html" class="h-entry v-height gradient" style="background-image: url('{{url('upload/post/'.$third[0]->image)}}');">
+            <a href="{{url('post/view')}}/{{$third[0]->id}}" class="h-entry v-height gradient" style="background-image: url('{{url('upload/post/'.$third[0]->image)}}');">
               
               <div class="text">
-                <h2>The AI magically removes moving objects from videos.</h2>
-                <span class="date">July 19, 2019</span>
+                <h2>{{$third[0]->title}}</h2>
+                <span class="date">{{ date('j F, Y', strtotime($third[0]->created_at)) }}</span>
               </div>
             </a>
           </div>
           
           <div class="col-md-4">
-            <a href="single.html" class="h-entry mb-30 v-height gradient" style="background-image: url('{{url('upload/post/'.$fourth[0]->image)}}');">
+            <a href="{{url('post/view')}}/{{$fourth[0]->id}}" class="h-entry mb-30 v-height gradient" style="background-image: url('{{url('upload/post/'.$fourth[0]->image)}}');">
               
               <div class="text">
-                <h2>The 20 Biggest Fintech Companies In America 2019</h2>
-                <span class="date">July 19, 2019</span>
+                <h2>{{$fourth[0]->title}}</h2>
+                <span class="date">{{ date('j F, Y', strtotime($fourth[0]->created_at)) }}</span>
               </div>
             </a>
-            <a href="single.html" class="h-entry v-height gradient" style="background-image: url('{{url('upload/post/'.$fifth[0]->image)}}');">
+            <a href="{{url('post/view')}}/{{$fifth[0]->id}}" class="h-entry v-height gradient" style="background-image: url('{{url('upload/post/'.$fifth[0]->image)}}');">
               
               <div class="text">
-                <h2>The 20 Biggest Fintech Companies In America 2019</h2>
-                <span class="date">July 19, 2019</span>
+                <h2>{{$fifth[0]->title}}</h2>
+                <span class="date">{{ date('j F, Y', strtotime($fifth[0]->created_at)) }}</span>
               </div>
             </a>
           </div>
@@ -140,7 +140,7 @@
               <div class="post-meta align-items-center text-left clearfix">
                 <figure class="author-figure mb-0 mr-3 float-left"><img src="" alt="Image" class="img-fluid"></figure>
                 <span class="d-inline-block mt-1">By <a href="#">Carrol Atkinson</a></span>
-                <span>&nbsp;-&nbsp; July 19, 2019</span>
+                <span>&nbsp;-&nbsp; {{ date('j F, Y', strtotime($value->created_at)) }}</span>
               </div>
               
                 <p style="height:80px;  overflow: hidden; text-overflow: ellipsis;">{{$value->post_t}}
