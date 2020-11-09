@@ -55,6 +55,11 @@ public function store(Request $request)
         return view('backend.admin.post.all-posts',compact('view'));
     }
 
+     public function view()
+    {
+       
+        return view('backend.admin.post.create-post');
+    }
 
 
 }

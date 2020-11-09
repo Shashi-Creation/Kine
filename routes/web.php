@@ -11,10 +11,13 @@
 |
 */
 
-Route::get('/', function () {
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('/l', function () {
     return view('welcome');
 });
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -32,3 +35,7 @@ Route::get('/admin/post', 'PostsController@viewpost');
 Route::get('/admin/post/create', 'PostsController@home');
 Route::post('/admin/post/store', 'PostsController@store');
 Route::get('/admin/post/view/{id}', 'PostsController@view');
+
+//frontend routes
+Route::get('/', 'FrontController@index');
+Route::get('/post/view/{id}', 'FrontController@view');

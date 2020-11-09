@@ -67,11 +67,6 @@ public function store(Request $request)
         return view ('backend.admin.user.user-view',compact('data'));
         // return view('backend.admin.user.user-view');
     }
-        public function edit($id)
-    {
-        $data = User::find($id);
-        return view ('backend.admin.user.user-update',compact('data'));
-    }
 
 
 
