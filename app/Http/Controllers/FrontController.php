@@ -14,7 +14,7 @@ class FrontController extends Controller
        $third = Post::orderBy('created_at', 'desc')->skip(2)->take(1)->get();
        $fourth = Post::orderBy('created_at', 'desc')->skip(3)->take(1)->get();
        $fifth = Post::orderBy('created_at', 'desc')->skip(4)->take(1)->get();
-       $view= Post::paginate(6);
+       $view= Post::orderBy('created_at', 'desc')->paginate(6);
         return view('frontend.postindex',compact('view','first','second','third','fourth','fifth'));
     }
 
