@@ -87,14 +87,14 @@
               
               <div class="text">
                 <h2>{{$second[0]->title}}</h2>
-                <span class="date">{{$second[0]->created_at}}</span>
+                <span class="date">{{ date('j F, Y', strtotime($second[0]->created_at)) }}</span>
               </div>
             </a>
             <a href="{{url('post/view')}}/{{$third[0]->id}}" class="h-entry v-height gradient" style="background-image: url('{{url('upload/post/'.$third[0]->image)}}');">
               
               <div class="text">
                 <h2>{{$third[0]->title}}</h2>
-                <span class="date">{{$third[0]->created_at}}</span>
+                <span class="date">{{ date('j F, Y', strtotime($third[0]->created_at)) }}</span>
               </div>
             </a>
           </div>
@@ -104,14 +104,14 @@
               
               <div class="text">
                 <h2>{{$fourth[0]->title}}</h2>
-                <span class="date">{{$fourth[0]->created_at}}</span>
+                <span class="date">{{ date('j F, Y', strtotime($fourth[0]->created_at)) }}</span>
               </div>
             </a>
             <a href="{{url('post/view')}}/{{$fifth[0]->id}}" class="h-entry v-height gradient" style="background-image: url('{{url('upload/post/'.$fifth[0]->image)}}');">
               
               <div class="text">
                 <h2>{{$fifth[0]->title}}</h2>
-                <span class="date">{{$fifth[0]->created_at}}</span>
+                <span class="date">{{ date('j F, Y', strtotime($fifth[0]->created_at)) }}</span>
               </div>
             </a>
           </div>
@@ -140,7 +140,7 @@
               <div class="post-meta align-items-center text-left clearfix">
                 <figure class="author-figure mb-0 mr-3 float-left"><img src="" alt="Image" class="img-fluid"></figure>
                 <span class="d-inline-block mt-1">By <a href="#">Carrol Atkinson</a></span>
-                <span>&nbsp;-&nbsp; July 19, 2019</span>
+                <span>&nbsp;-&nbsp; {{ date('j F, Y', strtotime($value->created_at)) }}</span>
               </div>
               
                 <p style="height:80px;  overflow: hidden; text-overflow: ellipsis;">{{$value->post_t}}

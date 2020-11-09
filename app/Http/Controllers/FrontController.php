@@ -25,4 +25,5 @@ class FrontController extends Controller
         return view ('frontend.postview',compact('data'));
     }
 
+
 }
