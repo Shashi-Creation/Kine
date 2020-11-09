@@ -62,16 +62,16 @@
     </header>
     
     
-    <div class="site-cover site-cover-sm same-height overlay single-page" style="background-image: url('{{url('upload/post/'.$data->image)}}');">
+    <div class="site-cover site-cover-sm same-height overlay single-page" style="background-image: url('{{url('upload/post/'.$data[0]->image)}}');">
       <div class="container">
         <div class="row same-height justify-content-center">
           <div class="col-md-12 col-lg-10">
             <div class="post-entry text-center">
-              <span class="post-category text-white bg-success mb-3">{{$data->title}}</span>
-              <h1 class="mb-4"><a href="#">{{$data->title}}</a></h1>
+              <span class="post-category text-white bg-success mb-3">{{$data[0]->title}}</span>
+              <h1 class="mb-4"><a href="#">{{$data[0]->title}}</a></h1>
               <div class="post-meta align-items-center text-center">
-                <figure class="author-figure mb-0 mr-3 d-inline-block"><img src="" alt="Image" class="img-fluid"></figure>
-                <span class="d-inline-block mt-1">By Carrol Atkinson</span>
+                <figure class="author-figure mb-0 mr-3 d-inline-block"><img src="{{url('upload/user/'.$data[0]->userimage)}}" alt="Image" class="img-fluid"></figure>
+                <span class="d-inline-block mt-1">By {{$data[0]->name}}</span>
                 <span>&nbsp;-&nbsp; February 10, 2019</span>
               </div>
             </div>
@@ -88,7 +88,7 @@
           <div class="col-md-12 col-lg-8 main-content">
             
             <div class="post-content-body">
-             {{$data->post_t}}
+             {{$data[0]->post_t}}
             </div>
 
             
@@ -107,13 +107,13 @@
 
           <div class="col-md-12 col-lg-4 sidebar">
                       <div class="vcard" >
-                        <img src="{{url('upload/post/'.$data->image)}}" alt="Image placeholder" style="width:400px;">
+                        <img src="{{url('upload/post/'.$data[0]->image)}}" alt="Image placeholder" style="width:400px;">
                       </div>
 
             <!-- END sidebar-box -->
             <div class="sidebar-box" style="margin-top: 50px;">
               <div class="bio text-center">
-                <img src="{{url('amila/images/person_2.jpg')}}" alt="Image Placeholder" class="img-fluid mb-5">
+                <img src="{{url('upload/user/'.$data[0]->userimage)}}" alt="Image Placeholder" class="img-fluid mb-5">
                 <div class="bio-body">
                   <h2>Dilshan Amila</h2>
                   <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem facilis sunt repellendus excepturi beatae porro debitis voluptate nulla quo veniam fuga sit molestias minus.</p>

@@ -1,3 +1,4 @@
+
  <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -138,8 +139,9 @@
 
               <h2><a href="{{url('post/view')}}/{{$value->id}}">{{$value->title}}</a></h2>
               <div class="post-meta align-items-center text-left clearfix">
-                <figure class="author-figure mb-0 mr-3 float-left"><img src="" alt="Image" class="img-fluid"></figure>
-                <span class="d-inline-block mt-1">By <a href="#">Carrol Atkinson</a></span>
+                <figure class="author-figure mb-0 mr-3 float-left"><img src="{{url('upload/user/'.$value->userimage)}}" alt="Image" class="img-fluid"></figure>
+                <span class="d-inline-block mt-1">By <a href="#">{{$value->name}}</a></span>
+                
                 <span>&nbsp;-&nbsp; {{ date('j F, Y', strtotime($value->created_at)) }}</span>
               </div>
               
@@ -154,7 +156,7 @@
 
         </div>
         <div class="d-flex justify-content-center">
-          {!! $view->links() !!}
+          
          </div>
 
 
