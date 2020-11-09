@@ -44,7 +44,7 @@
           </div>
 
           <div class="col-4 site-logo">
-            <image src="{{url('Image/kine.jpeg')}} " style="height: 100px; width:200px;" ><a href="index.html" class="text-black h2 mb-0"></a></image>
+            <a href="{{url('/')}}" class="text-black h2 mb-0"><image src="{{url('Image/kine.jpeg')}} " style="height: 100px; width:200px;" ></a></image>
           </div>
 
           <div class="col-8 text-right">

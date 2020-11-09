@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Mini Blog</title>
+    <title>Dr.Kine</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -44,23 +44,19 @@
           </div>
 
           <div class="col-4 site-logo">
-            <a href="index.html" class="text-black h2 mb-0">Mini Blog</a>
+            <a href="{{url('/')}}" class="text-black h2 mb-0"><image src="{{url('Image/kine.jpeg')}} " style="height: 100px; width:200px;" ></a></image>
           </div>
 
           <div class="col-8 text-right">
             <nav class="site-navigation" role="navigation">
               <ul class="site-menu js-clone-nav mr-auto d-none d-lg-block mb-0">
                 <li><a href="category.html">Home</a></li>
-                <li><a href="category.html">Politics</a></li>
-                <li><a href="category.html">Tech</a></li>
-                <li><a href="category.html">Entertainment</a></li>
-                <li><a href="category.html">Travel</a></li>
-                <li><a href="category.html">Sports</a></li>
-                <li class="d-none d-lg-inline-block"><a href="#" class="js-search-toggle"><span class="icon-search"></span></a></li>
+                <li><a href="category.html">Sign Up</a></li>
+                <li><a href="category.html">Login</a></li>
+              
               </ul>
             </nav>
-            <a href="#" class="site-menu-toggle js-menu-toggle text-black d-inline-block d-lg-none"><span class="icon-menu h3"></span></a></div>
-          </div>
+           
 
       </div>
     </header>
@@ -239,22 +235,7 @@
     </div>
 
 
-    <div class="site-section bg-lightx">
-      <div class="container">
-        <div class="row justify-content-center text-center">
-          <div class="col-md-5">
-            <div class="subscribe-1 ">
-              <h2>Subscribe to our newsletter</h2>
-              <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit nesciunt error illum a explicabo, ipsam nostrum.</p>
-              <form action="#" class="d-flex">
-                <input type="text" class="form-control" placeholder="Enter your email address">
-                <input type="submit" class="btn btn-primary" value="Subscribe">
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+  
     
     
     <div class="site-footer">
