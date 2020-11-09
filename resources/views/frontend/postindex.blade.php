@@ -50,10 +50,10 @@
           <div class="col-8 text-right">
             <nav class="site-navigation" role="navigation">
               <ul class="site-menu js-clone-nav mr-auto d-none d-lg-block mb-0">
-                <li><a href="category.html">Home</a></li>
+                <li><a href="{{url('/')}}">Home</a></li>
                
-                <li><a href="category.html">Sing Up</a></li>
-                <li><a href="category.html">Login</a></li>
+                <li><a href="{{url('')}}">Sing Up</a></li>
+                <li><a href="{{url('login')}}">Login</a></li>
                 
               </ul>
             </nav>
@@ -214,14 +214,7 @@
       <div class="container">
         <div class="row justify-content-center text-center">
           <div class="col-md-5">
-            <div class="subscribe-1 ">
-              <h2>Subscribe to our newsletter</h2>
-              <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit nesciunt error illum a explicabo, ipsam nostrum.</p>
-              <form action="#" class="d-flex">
-                <input type="text" class="form-control" placeholder="Enter your email address">
-                <input type="submit" class="btn btn-primary" value="Subscribe">
-              </form>
-            </div>
+            
           </div>
         </div>
       </div>
