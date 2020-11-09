@@ -50,9 +50,9 @@
           <div class="col-8 text-right">
             <nav class="site-navigation" role="navigation">
               <ul class="site-menu js-clone-nav mr-auto d-none d-lg-block mb-0">
-                <li><a href="category.html">Home</a></li>
+                <li><a href="{{url('/')}}">Home</a></li>
                 <li><a href="category.html">Sign Up</a></li>
-                <li><a href="category.html">Login</a></li>
+                <li><a href="{{url('login')}}">Login</a></li>
               
               </ul>
             </nav>
