@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Amilage Logima</title>
+    <title>Dr.Kine</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->  
@@ -25,10 +25,10 @@
 <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="{{asset('login_theam/css/util.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('login_theam/css/main.css')}} ">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <!--========================================================login_theam=======================================-->
 </head>
 <body>
-    
     <div class="limiter">
         <div class="container-login100">
             <div class="wrap-login100">
@@ -80,6 +80,7 @@
                         <a href="#" class="txt3" style="margin-left: 10px;">
                             Sign Up
                         </a>
+
                     </div>
 
                    <!--  <div class="w-full text-center">
@@ -89,9 +90,15 @@
                     </div> -->
                 </form>
 
-                <div class="login100-more" style="background-image: url('login_theam/images/1.jpg');"></div>
+                <div class="login100-more" style="background-image: url('Image/kine.jpeg');">
+                    <a href="{{url('/')}}" class="btn  btn-lg txt3">
+                              <i class="fa fa-chevron-left" style="" ></i> Back
+                         </a>
+                </div>
             </div>
+
         </div>
+
     </div>
     
     
