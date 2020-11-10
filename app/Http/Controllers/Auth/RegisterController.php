@@ -63,35 +63,33 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'country' =>$data['country'],
-            'user_type_id' => 3,
-            'status' => 1,
-            'password' => Hash::make($data['password']),
+        if(request()->hasfile('image')){
 
-            'if($request->hasfile('image')){
-
-                $file =$request->file('image');
+                $file =request()->file('image');
                 $extension=$file->getClientOriginalExtension();
                 $filename=time().'.'.$extension;
-                $file->move('upload/user/',$filename);
-                $data->image=$filename;
+                $file->move('Upload/Userimage/',$filename);
 
-               
-               }'
-               'else{
-                   echo 'Amila pakaya';
-                   $data->image = 'noimage.jpg';
-               }'
+                return User::create([
+                    'name'     => $data['name'],
+                    'email'    => $data['email'],
+                    'country'  =>$data['country'],
+                    'user_type_id' => 3,
+                    'status'   => 1,
+                    'image'    => $filename,
+                    'password' => Hash::make($data['password']),
+                 ]);
+            }else{
 
-        
-         'admin/user'
-
-
-
-
-        ]);
+                return User::create([
+                    'name' => $data['name'],
+                    'email' => $data['email'],
+                    'country' =>$data['country'],
+                    'user_type_id' => 3,
+                    'status' => 1,
+                    'image'    => 'noimg.jpg',
+                    'password' => Hash::make($data['password']),
+                 ]);
     }
+}
 }
