@@ -39,3 +39,4 @@ Route::get('/admin/post/view/{id}', 'PostsController@view');
 //frontend routes
 Route::get('/', 'FrontController@index');
 Route::get('/post/view/{id}', 'FrontController@view');
+Route::post('/user/register/save', 'auth\RegisterController@create');
