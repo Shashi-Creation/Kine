@@ -50,7 +50,7 @@
                         <input style="display: none" type="email" name="fakeusernameremembered" />
                        <input style="display: none" type="password" name="fakepasswordremembered" />
                        
-                      <div class="form-row ">
+                      <div class="form-row "style="width:100%; margin-right: 10px;">
 
                         <div class="form-group col-md-6 ">
                           <div class="form-group col-md-12">
@@ -104,8 +104,7 @@
                           <div class="alert" style="color: red;padding-left: 0px;">{{ $message }}</div>
                           @enderror
                         </div>
-                         <div class="form-group col-md-4">
-                        </div>
+                         
                         <div class="form-group col-md-4">
                         <button type="submit" class="btn" style="color: ">Submit</button>
                      
@@ -124,7 +123,7 @@
                 <div class="login100-more" style="background-image: url('Image/kine.jpeg');">
                     <a href="{{url('/')}}" class="btn  btn-lg txt3">
                               <i class="fa fa-chevron-left" style="" ></i> Back
-                         </a>
+                    </a>
                 </div>
             </div>
 

@@ -66,10 +66,32 @@ class RegisterController extends Controller
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
-            'country' =>1,
-            'user_type_id' => 1,
+            'country' =>$data['country'],
+            'user_type_id' => 3,
             'status' => 1,
             'password' => Hash::make($data['password']),
+
+            'if($request->hasfile('image')){
+
+                $file =$request->file('image');
+                $extension=$file->getClientOriginalExtension();
+                $filename=time().'.'.$extension;
+                $file->move('upload/user/',$filename);
+                $data->image=$filename;
+
+               
+               }'
+               'else{
+                   echo 'Amila pakaya';
+                   $data->image = 'noimage.jpg';
+               }'
+
+        
+         'admin/user'
+
+
+
+
         ]);
     }
 }
