@@ -61,5 +61,51 @@ public function store(Request $request)
         return view('backend.admin.post.create-post');
     }
 
+public function view()
+    {
+        return view('frontend.signupform');
+    }
+
+public function store(Request $request)
+    {
+        $this->validate(request(), [
+
+        'name'       => 'required',
+        'email'      => 'required|email|unique:users', 
+        'country'    => 'required',
+        'status'     => 'required',
+        'password'   => 'required|min:6',
+        'password_confirmation'=>'required|same:password',
+        ]);
+        
+        $data = new User();
+        $data->name =$request->name;
+        $data->country = $request->country;
+        $data->email =$request->email;
+        $data->password =Hash::make($request->password);
+        $data->user_type_id =3;
+        $data->status =$request->status;
+
+            if($request->hasfile('image')){
+
+                $file =$request->file('image');
+                $extension=$file->getClientOriginalExtension();
+                $filename=time().'.'.$extension;
+                $file->move('upload/user/',$filename);
+                $data->image=$filename;
+
+               
+               }else{
+                   echo 'Amila pakaya';
+                   $data->image = 'noimage.jpg';
+               }
+
+        $data->save();
+         return redirect('admin/user');
+    }
+
+
+
+
 
 }

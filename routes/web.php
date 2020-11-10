@@ -15,9 +15,11 @@
 //     return view('welcome');
 // });
 
-Route::get('/l', function () {
-    return view('welcome');
-});
+// Route::get('/l', function () {
+//     return view('welcome');
+// });
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -39,4 +41,7 @@ Route::get('/admin/post/view/{id}', 'PostsController@view');
 //frontend routes
 Route::get('/', 'FrontController@index');
 Route::get('/post/view/{id}', 'FrontController@view');
-Route::post('/user/register/save', 'auth\RegisterController@create');
+
+//frontend register page
+Route::get('signup', 'FrontController@regview');
+Route::post('signup/store', 'FrontController@regstore');
