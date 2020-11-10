@@ -53,7 +53,7 @@
               <ul class="site-menu js-clone-nav mr-auto d-none d-lg-block mb-0">
                 <li><a href="{{url('/')}}">Home</a></li>
                
-                <li><a href="{{url('register')}}">Sing Up</a></li>
+                <li><a href="{{url('signup')}}">Sing Up</a></li>
                 <li><a href="{{url('login')}}">Login</a></li>
                 
               </ul>

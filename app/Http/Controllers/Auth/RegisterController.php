@@ -68,7 +68,7 @@ class RegisterController extends Controller
                 $file =request()->file('image');
                 $extension=$file->getClientOriginalExtension();
                 $filename=time().'.'.$extension;
-                $file->move('Upload/Userimage/',$filename);
+                $file->move('upload/user/',$filename);
 
                 return User::create([
                     'name'     => $data['name'],
