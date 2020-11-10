@@ -63,6 +63,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+<<<<<<< HEAD
         if(request()->hasfile('image')){
 
                 $file =request()->file('image');
@@ -90,6 +91,15 @@ class RegisterController extends Controller
                     'image'    => 'noimg.jpg',
                     'password' => Hash::make($data['password']),
                  ]);
+=======
+        return User::create([
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'country' =>1,
+            'user_type_id' => 1,
+            'status' => 1,
+            'password' => Hash::make($data['password']),
+        ]);
+>>>>>>> 0ee74a18ed49f8367d5eec671b1240f465ac8619
     }
-}
 }
