@@ -114,10 +114,10 @@
             <div class="sidebar-box" style="margin-top: 50px;">
               <div class="bio text-center">
                 <img src="{{url('upload/user/'.$data[0]->userimage)}}" alt="Image Placeholder" class="img-fluid mb-5">
-                <div class="bio-body">
-                  <h2>Dilshan Amila</h2>
-                  <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem facilis sunt repellendus excepturi beatae porro debitis voluptate nulla quo veniam fuga sit molestias minus.</p>
-                  <p><a href="#" class="btn btn-primary btn-sm rounded px-4 py-2">Read my bio</a></p>
+                <div class="bio-body">author
+                  <h2>{{$data[0]->name}}</h2>
+                  <p class="mb-4"></p>
+                  <p></p>
                   <p class="social">
                     <a href="#" class="p-2"><span class="fa fa-facebook"></span></a>
                     <a href="#" class="p-2"><span class="fa fa-twitter"></span></a>
@@ -133,34 +133,56 @@
               <div class="post-entry-sidebar">
                 <ul>
                   <li>
-                    <a href="">
-                      <img src="images/img_1.jpg" alt="Image placeholder" class="mr-4">
+                    <a href="{{url('post/view')}}/{{$first_t->id}}">
+                      <img src="{{url('upload/post/'.$first_t->image)}}" alt="Image placeholder" class="mr-4">
                       <div class="text">
-                        <h4>There’s a Cool New Way for Men to Wear Socks and Sandals</h4>
+                        <h4>{{$first_t->title}}</h4>
                         <div class="post-meta">
-                          <span class="mr-2">March 15, 2018 </span>
+                          <span class="mr-2">{{ date('j F, Y', strtotime($first_t->created_at)) }}</span>
                         </div>
                       </div>
                     </a>
                   </li>
                   <li>
-                    <a href="">
-                      <img src="images/img_2.jpg" alt="Image placeholder" class="mr-4">
+                    <a href="{{url('post/view')}}/{{$second_t[0]->id}}">
+                      <img src="{{url('upload/post/'.$second_t[0]->image)}}" alt="Image placeholder" class="mr-4">
                       <div class="text">
-                        <h4>There’s a Cool New Way for Men to Wear Socks and Sandals</h4>
+                        <h4>{{$second_t[0]->title}}</h4>
                         <div class="post-meta">
-                          <span class="mr-2">March 15, 2018 </span>
+                          <span class="mr-2">{{ date('j F, Y', strtotime($second_t[0]->created_at)) }}</span>
                         </div>
                       </div>
                     </a>
                   </li>
                   <li>
-                    <a href="">
-                      <img src="images/img_3.jpg" alt="Image placeholder" class="mr-4">
+                    <a href="{{url('post/view')}}/{{$third_t->id}}">
+                      <img src="{{url('upload/post/'.$third_t->image)}}" alt="Image placeholder" class="mr-4">
                       <div class="text">
-                        <h4>There’s a Cool New Way for Men to Wear Socks and Sandals</h4>
+                        <h4>{{$third_t->title}}</h4>
                         <div class="post-meta">
-                          <span class="mr-2">March 15, 2018 </span>
+                          <span class="mr-2">{{ date('j F, Y', strtotime($third_t->created_at)) }}</span>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="{{url('post/view')}}/{{$fourth_t->id}}">
+                      <img src="{{url('upload/post/'.$fourth_t->image)}}" alt="Image placeholder" class="mr-4">
+                      <div class="text">
+                        <h4>{{$fourth_t->title}}</h4>
+                        <div class="post-meta">
+                          <span class="mr-2">{{ date('j F, Y', strtotime($fourth_t->created_at)) }}</span>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="{{url('post/view')}}/{{$fifth_t->id}}">
+                      <img src="{{url('upload/post/'.$fifth_t->image)}}" alt="Image placeholder" class="mr-4">
+                      <div class="text">
+                        <h4>{{$fifth_t->title}}</h4>
+                        <div class="post-meta">
+                          <span class="mr-2">{{ date('j F, Y', strtotime($fifth_t->created_at)) }}</span>
                         </div>
                       </div>
                     </a>
@@ -180,50 +202,44 @@
       </div>
     </section>
 
-    <div class="site-section bg-light">
+   <div class="site-section bg-light">
       <div class="container">
 
-        <div class="row mb-5">
-          <div class="col-12">
-            <h2>More Recent Posts</h2>
-          </div>
-        </div>
-
         <div class="row align-items-stretch retro-layout">
-          
-          <div class="col-md-5 order-md-2">
-            <a href="single.html" class="hentry img-1 h-100 gradient" style="background-image: url('images/img_4.jpg');">
-              <span class="post-category text-white bg-danger">Travel</span>
+           
+          <div class="col-md-5">
+            <a href="{{url('post/view')}}/{{$first->id}}" class="hentry img-1 h-100 gradient" style="background-image: url('{{url('upload/post/'.$first->image)}}');">
+              
               <div class="text">
-                <h2>The 20 Biggest Fintech Companies In America 2019</h2>
-                <span>February 12, 2019</span>
+                <h2>{{$first->title}}</h2>
+                <span>{{ date('j F, Y', strtotime($first->created_at)) }}</span>
               </div>
             </a>
           </div>
-
+          
           <div class="col-md-7">
             
-            <a href="single.html" class="hentry img-2 v-height mb30 gradient" style="background-image: url('images/img_1.jpg');">
-              <span class="post-category text-white bg-success">Nature</span>
+            <a href="{{url('post/view')}}/{{$second[0]->id}}" class="hentry img-2 v-height mb30 gradient" style="background-image: url('{{url('upload/post/'.$second[0]->image)}}');">
+              
               <div class="text text-sm">
-                <h2>The 20 Biggest Fintech Companies In America 2019</h2>
-                <span>February 12, 2019</span>
+                <h2>{{$second[0]->title}}</h2>
+                <span>{{ date('j F, Y', strtotime($second[0]->created_at)) }}</span>
               </div>
             </a>
             
             <div class="two-col d-block d-md-flex">
-              <a href="single.html" class="hentry v-height img-2 gradient" style="background-image: url('images/img_2.jpg');">
-                <span class="post-category text-white bg-primary">Sports</span>
+              <a href="{{url('post/view')}}/{{$third[0]->id}}" class="hentry v-height img-2 gradient" style="background-image: url('{{url('upload/post/'.$third[0]->image)}}');">
+                
                 <div class="text text-sm">
-                  <h2>The 20 Biggest Fintech Companies In America 2019</h2>
-                  <span>February 12, 2019</span>
+                  <h2>{{$third[0]->title}}</h2>
+                  <span>{{ date('j F, Y', strtotime($third[0]->created_at)) }}</span>
                 </div>
               </a>
-              <a href="single.html" class="hentry v-height img-2 ml-auto gradient" style="background-image: url('images/img_3.jpg');">
-                <span class="post-category text-white bg-warning">Lifestyle</span>
+            <a href="{{url('post/view')}}/{{$fourth[0]->id}}" class="hentry v-height img-2 ml-auto gradient" style="background-image: url('{{url('upload/post/'.$fourth[0]->image)}}');">
+                
                 <div class="text text-sm">
-                  <h2>The 20 Biggest Fintech Companies In America 2019</h2>
-                  <span>February 12, 2019</span>
+                  <h2>{{$fourth[0]->title}}</h2>
+                  <span>{{ date('j F, Y', strtotime($fourth[0]->created_at)) }}</span>
                 </div>
               </a>
             </div>  

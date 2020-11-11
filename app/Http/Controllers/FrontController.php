@@ -37,7 +37,16 @@ class FrontController extends Controller
         $count->save();
 
         $data = Post::selectpost($id);
-        return view ('frontend.postview',compact('data'));
+        $first_t = Post::orderBy('p_count', 'desc')->where("status",1)->first();
+        $second_t = Post::orderBy('p_count', 'desc')->where("status",1)->skip(1)->take(1)->get();
+        $third_t = Post::orderBy('p_count', 'desc')->where("status",1)->skip(2)->take(1)->get()->first();
+        $fourth_t = Post::orderBy('p_count', 'desc')->where("status",1)->skip(3)->take(1)->get()->first();
+        $fifth_t = Post::orderBy('p_count', 'desc')->where("status",1)->skip(4)->take(1)->get()->first();
+        $first = Post::orderBy('created_at', 'desc')->where("status",1)->first();
+        $second = Post::orderBy('created_at', 'desc')->where("status",1)->skip(1)->take(1)->get();
+        $third = Post::orderBy('created_at', 'desc')->where("status",1)->skip(2)->take(1)->get();
+        $fourth = Post::orderBy('created_at', 'desc')->where("status",1)->skip(3)->take(1)->get();
+        return view ('frontend.postview',compact('data','first_t','second_t','third_t','fourth_t','fifth_t','first','second','third','fourth'));
     }
 
 
