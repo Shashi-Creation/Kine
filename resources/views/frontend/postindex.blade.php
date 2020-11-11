@@ -70,49 +70,48 @@
         <div class="row align-items-stretch retro-layout-2">
 
           <div class="col-md-4">
-            <a href="{{url('post/view')}}/{{$first->id}}" class="h-entry img-5 h-100 gradient" style="background-image: url('{{url('upload/post/'.$first->image)}}')">
+            <a href="{{url('post/view')}}/{{$first_t->id}}" class="h-entry img-5 h-100 gradient" style="background-image: url('{{url('upload/post/'.$first_t->image)}}');">
               
               <div class="text">
                 <div class="post-categories mb-3">
-                  <span class="post-category bg-danger">Travel</span>
-                  <span class="post-category bg-primary">Food</span>
+                  <span class="post-category bg-danger">Trending #1</span>
                 </div>
-                <h2>{{$first->title}}</h2>
-                <span class="date">{{ date('j F, Y', strtotime($first->created_at)) }}</span>
+                <h2>{{$first_t->title}}</h2>
+                <span class="date">{{ date('j F, Y', strtotime($first_t->created_at)) }}</span>
               </div>
             </a>
           </div>
 
           <div class="col-md-4">
-            <a href="{{url('post/view')}}/{{$second[0]->id}}" class="h-entry mb-30 v-height gradient" style="background-image: url('{{url('upload/post/'.$second[0]->image)}}');"> 
+            <a href="{{url('post/view')}}/{{$second_t[0]->id}}" class="h-entry mb-30 v-height gradient" style="background-image: url('{{url('upload/post/'.$second_t[0]->image)}}');"> 
               
               <div class="text">
-                <h2>{{$second[0]->title}}</h2>
-                <span class="date">{{ date('j F, Y', strtotime($second[0]->created_at)) }}</span>
+                <h2>{{$second_t[0]->title}}</h2>
+                <span class="date">{{ date('j F, Y', strtotime($second_t[0]->created_at)) }}</span>
               </div>
             </a>
-            <a href="{{url('post/view')}}/{{$third[0]->id}}" class="h-entry v-height gradient" style="background-image: url('{{url('upload/post/'.$third[0]->image)}}');">
+            <a href="{{url('post/view')}}/{{$third_t->id}}" class="h-entry v-height gradient" style="background-image: url('{{url('upload/post/'.$third_t->image)}}');">
               
               <div class="text">
-                <h2>{{$third[0]->title}}</h2>
-                <span class="date">{{ date('j F, Y', strtotime($third[0]->created_at)) }}</span>
+                <h2>{{$third_t->title}}</h2>
+                <span class="date">{{ date('j F, Y', strtotime($third_t->created_at)) }}</span>
               </div>
             </a>
           </div>
           
           <div class="col-md-4">
-            <a href="{{url('post/view')}}/{{$fourth[0]->id}}" class="h-entry mb-30 v-height gradient" style="background-image: url('{{url('upload/post/'.$fourth[0]->image)}}');">
+            <a href="{{url('post/view')}}/{{$fourth_t->id}}" class="h-entry mb-30 v-height gradient" style="background-image: url('{{url('upload/post/'.$fourth_t->image)}}');">
               
               <div class="text">
-                <h2>{{$fourth[0]->title}}</h2>
-                <span class="date">{{ date('j F, Y', strtotime($fourth[0]->created_at)) }}</span>
+                <h2>{{$fourth_t->title}}</h2>
+                <span class="date">{{ date('j F, Y', strtotime($fourth_t->created_at)) }}</span>
               </div>
             </a>
-            <a href="{{url('post/view')}}/{{$fifth[0]->id}}" class="h-entry v-height gradient" style="background-image: url('{{url('upload/post/'.$fifth[0]->image)}}');">
+            <a href="{{url('post/view')}}/{{$fifth_t->id}}" class="h-entry v-height gradient" style="background-image: url('{{url('upload/post/'.$fifth_t->image)}}');">
               
               <div class="text">
-                <h2>{{$fifth[0]->title}}</h2>
-                <span class="date">{{ date('j F, Y', strtotime($fifth[0]->created_at)) }}</span>
+                <h2>{{$fifth_t->title}}</h2>
+                <span class="date">{{ date('j F, Y', strtotime($fifth_t->created_at)) }}</span>
               </div>
             </a>
           </div>
@@ -139,7 +138,7 @@
 
               <h2><a href="{{url('post/view')}}/{{$value->id}}">{{$value->title}}</a></h2>
               <div class="post-meta align-items-center text-left clearfix">
-                <figure class="author-figure mb-0 mr-3 float-left"><img src="{{url('upload/user/'.$value->userimage)}}" alt="Image" class="img-fluid"></figure>
+                <figure class="author-figure mb-0 mr-3 float-left"><img src="{{url('upload/user/'.$value->uimg)}}" alt="Image" class="img-fluid"></figure>
                 <span class="d-inline-block mt-1">By <a href="#">{{$value->name}}</a></span>
                 
                 <span>&nbsp;-&nbsp; {{ date('j F, Y', strtotime($value->created_at)) }}</span>
@@ -156,7 +155,7 @@
 
         </div>
         <div class="d-flex justify-content-center">
-          
+          {!! $view->links() !!}
          </div>
 
 
@@ -168,39 +167,39 @@
 
         <div class="row align-items-stretch retro-layout">
            
-          <div class="col-md-5 order-md-2">
-            <a href="single.html" class="hentry img-1 h-100 gradient" style="background-image: url('images/img_4.jpg');">
-              <span class="post-category text-white bg-danger">Travel</span>
+          <div class="col-md-5">
+            <a href="{{url('post/view')}}/{{$first->id}}" class="hentry img-1 h-100 gradient" style="background-image: url('{{url('upload/post/'.$first->image)}}');">
+              
               <div class="text">
-                <h2>The 20 Biggest Fintech Companies In America 2019</h2>
-                <span>February 12, 2019</span>
+                <h2>{{$first->title}}</h2>
+                <span>{{ date('j F, Y', strtotime($first->created_at)) }}</span>
               </div>
             </a>
           </div>
           
           <div class="col-md-7">
             
-            <a href="single.html" class="hentry img-2 v-height mb30 gradient" style="background-image: url('images/img_1.jpg');">
-              <span class="post-category text-white bg-success">Nature</span>
+            <a href="{{url('post/view')}}/{{$second[0]->id}}" class="hentry img-2 v-height mb30 gradient" style="background-image: url('{{url('upload/post/'.$second[0]->image)}}');">
+              
               <div class="text text-sm">
-                <h2>The 20 Biggest Fintech Companies In America 2019</h2>
-                <span>February 12, 2019</span>
+                <h2>{{$second[0]->title}}</h2>
+                <span>{{ date('j F, Y', strtotime($second[0]->created_at)) }}</span>
               </div>
             </a>
             
             <div class="two-col d-block d-md-flex">
-              <a href="single.html" class="hentry v-height img-2 gradient" style="background-image: url('images/img_2.jpg');">
-                <span class="post-category text-white bg-primary">Sports</span>
+              <a href="{{url('post/view')}}/{{$third[0]->id}}" class="hentry v-height img-2 gradient" style="background-image: url('{{url('upload/post/'.$third[0]->image)}}');">
+                
                 <div class="text text-sm">
-                  <h2>The 20 Biggest Fintech Companies In America 2019</h2>
-                  <span>February 12, 2019</span>
+                  <h2>{{$third[0]->title}}</h2>
+                  <span>{{ date('j F, Y', strtotime($third[0]->created_at)) }}</span>
                 </div>
               </a>
-              <a href="single.html" class="hentry v-height img-2 ml-auto gradient" style="background-image: url('images/img_3.jpg');">
-                <span class="post-category text-white bg-warning">Lifestyle</span>
+            <a href="{{url('post/view')}}/{{$fourth[0]->id}}" class="hentry v-height img-2 ml-auto gradient" style="background-image: url('{{url('upload/post/'.$fourth[0]->image)}}');">
+                
                 <div class="text text-sm">
-                  <h2>The 20 Biggest Fintech Companies In America 2019</h2>
-                  <span>February 12, 2019</span>
+                  <h2>{{$fourth[0]->title}}</h2>
+                  <span>{{ date('j F, Y', strtotime($fourth[0]->created_at)) }}</span>
                 </div>
               </a>
             </div>  
@@ -276,7 +275,7 @@
 
   <script src="{{asset('amila/js/jquery-3.3.1.min.js')}}"></script> 
   <script src="{{asset('amila/js/jquery-migrate-3.0.1.min.js')}}"></script>
-  <script src="{{asset('amila/js/jquery-ui.js')}}"></script> {{asset('amila/js/main.js')}}
+  <script src="{{asset('amila/js/jquery-ui.js')}}"></script>
   <script src="{{asset('amila/js/popper.min.js')}}"></script>
   <script src="{{asset('amila/js/bootstrap.min.js')}}"></script>
   <script src="{{asset('amila/js/owl.carousel.min.js')}}"></script>

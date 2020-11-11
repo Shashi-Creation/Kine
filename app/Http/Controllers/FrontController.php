@@ -15,13 +15,15 @@ class FrontController extends Controller
        $second = Post::orderBy('created_at', 'desc')->where("status",1)->skip(1)->take(1)->get();
        $third = Post::orderBy('created_at', 'desc')->where("status",1)->skip(2)->take(1)->get();
        $fourth = Post::orderBy('created_at', 'desc')->where("status",1)->skip(3)->take(1)->get();
-       $fifth = Post::orderBy('created_at', 'desc')->where("status",1)->skip(4)->take(1)->get();
-       $view= Post::postgetlist()->sortByDesc('created_at');
-       //return $test = Post::all()->sortByDesc('created_at');
-        $test2 = DB::table('posts')->join('users','users.id','posts.user_id')->select('posts.*','users.name','users.image as uimg')->get();
-        $test3 = json_encode($test2);
-        return $area = json_decode($test3, true);
-        return view('frontend.postindex',compact('view','first','second','third','fourth','fifth'));
+       $first_t = Post::orderBy('p_count', 'desc')->where("status",1)->first();
+       $second_t = Post::orderBy('p_count', 'desc')->where("status",1)->skip(1)->take(1)->get();
+       $third_t = Post::orderBy('p_count', 'desc')->where("status",1)->skip(2)->take(1)->get()->first();
+       $fourth_t = Post::orderBy('p_count', 'desc')->where("status",1)->skip(3)->take(1)->get()->first();
+       $fifth_t = Post::orderBy('p_count', 'desc')->where("status",1)->skip(4)->take(1)->get()->first();
+       $view = DB::table('posts')->join('users','users.id','posts.user_id')->select('posts.*','users.name','users.image as uimg')->where('posts.status',1)->orderBy('posts.created_at', 'DESC')->paginate(6);
+
+
+        return view('frontend.postindex',compact('view','first','second','third','fourth','first_t','second_t','third_t','fourth_t','fifth_t'));
     }
 
 
