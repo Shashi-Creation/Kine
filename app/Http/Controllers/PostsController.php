@@ -61,12 +61,8 @@ public function store(Request $request)
         return view('backend.admin.post.create-post');
     }
 
-public function view()
-    {
-        return view('frontend.signupform');
-    }
 
-public function store(Request $request)
+    public function store(Request $request)
     {
         $this->validate(request(), [
 
