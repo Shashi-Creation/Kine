@@ -74,6 +74,6 @@ public function regstore(Request $request)
                }
 
       $data->save();
-         return redirect('/login');
+         return redirect('/');
     }
 }

@@ -105,8 +105,8 @@
                           @enderror
                         </div>
                          
-                        <div class="form-group col-md-4">
-                        <button type="submit" class="btn" style="color: ">Submit</button>
+                        <div class="container-login100-form-btn">
+                        <button type="submit" class="login100-form-btn">Submit</button>
                      
 
                         </div>
@@ -123,7 +123,8 @@
                 <div class="login100-more" style="background-image: url('Image/kine.jpeg');">
                     <a href="{{url('/')}}" class="btn  btn-lg txt3">
                               <i class="fa fa-chevron-left" style="" ></i> Back
-                    </a>
+                         </a>
+                    
                 </div>
             </div>
 
