@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 use App\Post;
+use App\User;
 use Illuminate\Support\Facades\DB;
-
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 
 class FrontController extends Controller

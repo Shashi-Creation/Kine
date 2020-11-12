@@ -46,11 +46,11 @@
                     </td>
                     
                     <td class="project-actions">
-                          <a class="btn btn-info btn-circle btn-sm" href="{{url('admin/post/view-post')}}/{{$value->id}}">
+                          <a class="btn btn-info btn-circle btn-sm" href="{{url('/admin/post/view')}}/{{$value->id}}">
                               <i class="fa fa-eye">
                               </i>
                           </a>
-                          <a class="btn btn-danger btn-circle btn-sm" href="{{url('/admin/post/edit-post')}}/{{$value->id}}">
+                          <a class="btn btn-danger btn-circle btn-sm" href="{{url('/admin/post/edit')}}/{{$value->id}}">
                               <i class="fa fa-edit" aria-hidden="true"></i>
                               </i>
                           </a>

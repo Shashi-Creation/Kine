@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Post;
+use App\User;
 use Illuminate\Http\Request;
 
 class PostsController extends Controller
@@ -55,53 +56,56 @@ public function store(Request $request)
         return view('backend.admin.post.all-posts',compact('view'));
     }
 
-     public function view()
+
+     public function view($id)
     {
-       
-        return view('backend.admin.post.create-post');
+       $data = Post::find($id);
+        return view ('backend.admin.post.view-post',compact('data'));
+        
     }
 
-
-    // public function store(Request $request)
-    // {
-    //     $this->validate(request(), [
-
-    //     'name'       => 'required',
-    //     'email'      => 'required|email|unique:users', 
-    //     'country'    => 'required',
-    //     'status'     => 'required',
-    //     'password'   => 'required|min:6',
-    //     'password_confirmation'=>'required|same:password',
-    //     ]);
+     public function edit($id)
+    {
+       $data = Post::find($id);
+        return view ('backend.admin.post.update-post',compact('data'));
         
-    //     $data = new User();
-    //     $data->name =$request->name;
-    //     $data->country = $request->country;
-    //     $data->email =$request->email;
-    //     $data->password =Hash::make($request->password);
-    //     $data->user_type_id =3;
-    //     $data->status =$request->status;
+    }
 
-    //         if($request->hasfile('image')){
+public function update(Request $request,$id)
+    {
 
-    //             $file =$request->file('image');
-    //             $extension=$file->getClientOriginalExtension();
-    //             $filename=time().'.'.$extension;
-    //             $file->move('upload/user/',$filename);
-    //             $data->image=$filename;
+        $this->validate(request(), [
+
+        'title'       => 'required',
+        
+        'title'    => 'required',
+        'status'     => 'required',
+        
+        ]);
+        
+        $data = Post::find($id);
+        $data->title =$request->title;
+        $data->url =$request->url;
+        $data->post_t =$request->content;
+        $data->user_id =1;
+        $data->status =$request->status;
+
+            if($request->hasfile('image')){
+
+                $file =$request->file('image');
+                $extension=$file->getClientOriginalExtension();
+                $filename=time().'.'.$extension;
+                $file->move('upload/post/',$filename);
+                $data->image=$filename;
 
                
-    //            }else{
-    //                echo 'Amila pakaya';
-    //                $data->image = 'noimage.jpg';
-    //            }
+               }else{
+                   echo 'Amila pakaya';
+                   
+               }
 
-    //     $data->save();
-    //      return redirect('admin/user');
-    // }
-
-
-
-
+        $data->save();
+         return redirect('admin/post');
+    }
 
 }

@@ -28,8 +28,7 @@
 
  <!------------------------------------content --------------------------------------------------->
 
-  <form method="post
-  " action="{{url('/admin/user/store')}}" enctype="multipart/form-data" autocomplete="chrome-off">
+  <form method="post" action="{{url('/admin/user/edit/update')}}/{{$data->id}}" enctype="multipart/form-data" autocomplete="chrome-off">
    {{ csrf_field() }}  
    <input style="display: none" type="email" name="fakeusernameremembered" />
    <input style="display: none" type="password" name="fakepasswordremembered" />
@@ -54,37 +53,32 @@
       </div>
     <div class="form-group col-md-12">
       <label for="inputEmail4">Country</label>
-      <input type="text" class="form-control" id="country" name="country" placeholder="Country" value="{{$data->country}}">
+      <input type="text" class="form-control" id="country" name="country" placeholder="country" value="{{$data->country}}">
       @error('country')
       <div class="alert" style="color: red;padding-left: 0px;">{{ $message }}</div>
       @enderror
     </div>
 
-    <div class="form-group col-md-12">
-      <label for="inputEmail4">Password</label>
-      <input type="password" class="form-control" id="password" name="password" value="{{$data->password}}" placeholder="Password" autocomplete="new-password">
-      @error('password')
-      <div class="alert" style="color: red;padding-left: 0px;">{{ $message }}</div>
-      @enderror
-    </div>
-    <div class="form-group col-md-12">
-      <label for="inputEmail4">Confirm Password</label>
-      <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" placeholder="Confirm Password">
-      @error('password_confirmation')
-      <div class="alert" style="color: red;padding-left: 0px;">{{ $message }}</div>
-      @enderror
-    </div>
+   
+   
 
 
    <div class="form-group col-md-12" style="padding-bottom: 10px;">
             <label for="inputState">State</label>
           <select id="inputState" class="form-control" name="status">
        <option value="1" {{$data->status=='1'?'selected':''}}>Active</option>
-          <option value="2" {{$data->status=='0'?'selected':''}}>Inactive</option>
+          <option value="2" {{$data->status=='2'?'selected':''}}>Inactive</option>
           </select>
           @error('status')
         <div class="alert" style="color: red;padding-left: 0px;">{{ $message }}</div>
         @enderror
+    </div>
+
+
+     <div class="form-group col-md-12">
+    
+      <a href="{{url('/admin/user/edit/pwd')}}/{{$data->id}}"  class="btn btn-danger">Change Password</a>
+    
     </div>
 
   </div>

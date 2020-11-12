@@ -24,7 +24,7 @@
               
  <!------------------------------------content --------------------------------------------------->
 
-  <form method="post"  enctype="multipart/form-data" autocomplete="chrome-off">
+  <form method="post"  enctype="multipart/form-data" autocomplete="chrome-off" action="{{url('/admin/post/update')}}/{{$data->id}}">
    {{ csrf_field() }}  
    <input style="display: none" type="email" name="fakeusernameremembered" />
    <input style="display: none" type="password" name="fakepasswordremembered" />
@@ -98,7 +98,7 @@
     <div class="form-group col-md-4">
     </div>
     <div class="form-group col-md-4">
-
+<button type="submit" class="btn btn-primary">Submit</button>
   <a href="{{url('admin/post')}}"  class="btn btn-info">Back</a>
 
     </div>
