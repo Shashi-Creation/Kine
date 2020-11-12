@@ -69,6 +69,74 @@ public function store(Request $request)
     }
 
 
+    public function edit($id)
+    {
+         $data = User::find($id);
+        return view ('backend.admin.user.user-update',compact('data'));
+    }
+
+    public function update(Request $request,$id)
+    {
+        $this->validate(request(), [
+
+        'name'       => 'required',
+        'email'      => ['required','email', 'max:255', Rule::unique('users')->ignore($request->id)],
+        'country'    => 'required',
+        'status'     => 'required',
+        ]);
+        
+        $data = User::find($id); 
+        $data->name =$request->name;
+        $data->country = $request->country;
+        $data->email =$request->email;
+        $data->password =Hash::make($request->password);
+        $data->user_type_id =2;
+        $data->status =$request->status;
+
+            if($request->hasfile('image')){
+
+                $file =$request->file('image');
+                $extension=$file->getClientOriginalExtension();
+                $filename=time().'.'.$extension;
+                $file->move('upload/user/',$filename);
+                $data->image=$filename;
+
+               
+               }else{
+                   echo 'Amila photo wenas karanna epa gobbayo ';
+                   
+               }
+
+        $data->save();
+         return redirect('admin/user');
+    }
+
+ public function editpwd($id)
+    {
+         $data = User::find($id);
+        return view ('backend.admin.user.changepwd',compact('data'));
+    }
+
+    public function updatepwd(Request $request,$id)
+    {
+
+        $this->validate(request(), [
+
+        'password'   => 'required|min:6',
+        'password_confirmation'=>'required|same:password',
+        ]);
+        
+        $data = User::find($id);
+        $data->password = Hash::make($request->password);
+        $data->save();
+
+         return redirect('/admin/user');
+         
+    }
+
+
+
+
 
 }
 

@@ -64,7 +64,7 @@
             <label for="inputState">State</label>
           <select id="inputState" class="form-control" name="status">
        <option value="1" {{$data->status=='1'?'selected':''}}>Active</option>
-          <option value="2" {{$data->status=='0'?'selected':''}}>Inactive</option>
+          <option value="2" {{$data->status=='2'?'selected':''}}>Inactive</option>
           </select>
           @error('status')
         <div class="alert" style="color: red;padding-left: 0px;">{{ $message }}</div>
