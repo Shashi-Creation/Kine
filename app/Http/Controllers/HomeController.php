@@ -3,6 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
+use App\Post;
+use App\Comment;
+use App\VisitorCount;
+use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class HomeController extends Controller
 {
@@ -23,6 +29,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('backend.admin.dashbord');
+        $usercount  = User::count();  
+
+        $userinnactive  = User::all()->where("status",2);
+        $userinactivecount = $userinnactive->count();
+        $postcount  = Post::count();  
+        $visittoday= VisitorCount::whereDate('created_at', date('Y-m-d'))->get()->count();
+
+        return view('backend.admin.dashbord',compact('usercount','postcount','userinactivecount','visittoday'));
     }
 }

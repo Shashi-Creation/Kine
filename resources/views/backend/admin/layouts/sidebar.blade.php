@@ -1,7 +1,7 @@
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{url('home')}}">
         <div class="sidebar-brand-icon rotate-n-15">
           <i class=""></i>
         </div>
@@ -48,6 +48,12 @@
       </div>
 
       <li class="nav-item">
+        <a class="nav-link" href="{{url('home')}}" style="color: white;">
+          <i class="fas fa-tachometer-alt" style="color: white;"></i>
+          <span>Dashboard</span></a>
+      </li>
+
+      <li class="nav-item">
         <a class="nav-link" href="{{url('admin/user')}}" style="color: white;">
           <i class="fas fa-user" style="color: white;"></i>
           <span>Users</span></a>
@@ -60,21 +66,18 @@
       </li>
 
       <!-- Nav Item - Utilities Collapse Menu -->
-      <!-- <li class="nav-item">
+      <li class="nav-item">
         <a class="nav-link collapsed" href="{{url('admin/post')}}" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
-          <i class="fas fa-fw fa-wrench"></i>
-          <span>Post</span>
+          <i class="fa fa-file" style="color: white;"></i>
+          <span>Reprts</span>
         </a>
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded"> 
-            <h6 class="collapse-header">Custom Utilities:</h6>
-            <a class="collapse-item" href="utilities-color.html">Colors</a>
-            <a class="collapse-item" href="utilities-border.html">Borders</a>
-            <a class="collapse-item" href="utilities-animation.html">Animations</a>
-            <a class="collapse-item" href="utilities-other.html">Other</a>
+            <a class="collapse-item" href="utilities-color.html">Visitors</a>
+            <a class="collapse-item" href="utilities-border.html">Trending</a>
           </div>
         </div>
-      </li> -->
+      </li>
 
       <!-- Divider -->
       <hr class="sidebar-divider">
