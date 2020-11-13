@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Post;
 use App\User;
+use App\VisitorCount;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
@@ -22,6 +23,9 @@ class FrontController extends Controller
        $fourth_t = Post::orderBy('p_count', 'desc')->where("status",1)->skip(3)->take(1)->get()->first();
        $fifth_t = Post::orderBy('p_count', 'desc')->where("status",1)->skip(4)->take(1)->get()->first();
        $view = DB::table('posts')->join('users','users.id','posts.user_id')->select('posts.*','users.name','users.image as uimg')->where('posts.status',1)->orderBy('posts.created_at', 'DESC')->paginate(6);
+        $v = new VisitorCount();
+        $v->ip_address = \request()->ip();
+        $v->save();
 
 
         return view('frontend.postindex',compact('view','first','second','third','fourth','first_t','second_t','third_t','fourth_t','fifth_t'));

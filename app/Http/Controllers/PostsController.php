@@ -19,9 +19,9 @@ public function store(Request $request)
         $this->validate(request(), [
 
         'title'       => 'required',
-        'image'      => 'required', 
-        'title'    => 'required',
-        'status'     => 'required',
+        'image'       => 'required', 
+        'title'       => 'required',
+        'status'      => 'required',
         
         ]);
     	
