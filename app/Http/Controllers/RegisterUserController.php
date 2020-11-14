@@ -1,17 +1,20 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Post;
 use App\User;
 use App\VisitorCount;
+use App\Comment;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use \Rinvex\Country\CountryLoader;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
-class FrontController extends Controller
+class RegisterUserController extends Controller
 {
-        public function index()
+    public function index()
     {
 
        $first = Post::orderBy('created_at', 'desc')->where("status",1)->first();
@@ -33,7 +36,7 @@ class FrontController extends Controller
         $v->save();
 //return $country->getFlag();
 
-        return view('frontend.postindex',compact('view','first','second','third','fourth','first_t','second_t','third_t','fourth_t','fifth_t'));
+        return view('frontend.registeruser.postindex',compact('view','first','second','third','fourth','first_t','second_t','third_t','fourth_t','fifth_t'));
     }
 
 
@@ -56,55 +59,26 @@ class FrontController extends Controller
         $second = Post::orderBy('created_at', 'desc')->where("status",1)->skip(1)->take(1)->get();
         $third = Post::orderBy('created_at', 'desc')->where("status",1)->skip(2)->take(1)->get();
         $fourth = Post::orderBy('created_at', 'desc')->where("status",1)->skip(3)->take(1)->get();
-        return view ('frontend.postview',compact('data','first_t','second_t','third_t','fourth_t','fifth_t','first','second','third','fourth'));
+        $comments = Comment::selectcomments($id);
+        $commentcount = Comment::all()->where("post_id",$id)->count();
+        return view ('frontend.registeruser.postview',compact('data','first_t','second_t','third_t','fourth_t','fifth_t','first','second','third','fourth','commentcount','comments'));
     }
 
-
-
-
-
-public function regview()
+    
+    public function commentadd(Request $request ,$id)
     {
-      return view('frontend.signupform');
-    }
+    	$this->validate(request(), [
 
-public function regstore(Request $request)
-    {
-
-
-        $this->validate(request(), [
-
-        'name'       => 'required',
-        'email'      => 'required|email|unique:users', 
-        'country'    => 'required',
-        'password'   => 'required|min:6',
-        'password_confirmation'=>'required|same:password',
+        'comment'       => 'required',
         ]);
-      
-      $data = new User();
-      $data->name =$request->name;
-      $data->country = $request->country;
-      $data->email =$request->email;
-      $data->password =Hash::make($request->password);
-      $data->user_type_id =3;
-      $data->status = 1;
 
-        if($request->hasfile('image')){
-
-                $file =$request->file('image');
-                $extension=$file->getClientOriginalExtension();
-                $filename=time().'.'.$extension;
-                $file->move('upload/user/',$filename);
-                $data->image=$filename;
-
-               
-               }else{
-                   echo 'Amila pakaya';
-                   $data->image = 'noimage.jpg';
-               }
-
-      $data->save();
-         return redirect('/');
+        $data = new Comment();
+        $data->user_id  = Auth::id();
+        $data->post_id  = $id;
+    	$data->comment  = $request->comment;
+    	$data->status   = 0;
+    	$data->save();
+        return redirect()->back();
     }
 
 }
