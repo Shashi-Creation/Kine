@@ -15,8 +15,8 @@ class CreateVisitorCountsTable extends Migration
     {
         Schema::create('visitor_counts', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('ip_address');
-            $table->string('country');
+            $table->string('ip_address')->nullable();
+            $table->string('country')->nullable();
             $table->timestamps();
         });
     }
