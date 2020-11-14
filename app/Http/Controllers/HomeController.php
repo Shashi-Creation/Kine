@@ -30,13 +30,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-
+        
         $usercount  = User::count();  
         $userinnactive  = User::all()->where("status",2);
         $userinactivecount = $userinnactive->count();
         $postcount  = Post::count();  
         $visittoday = VisitorCount::whereDate('created_at', date('Y-m-d'))->get()->count();
-        
+
 
         return view('backend.admin.dashbord',compact('usercount','postcount','userinactivecount','visittoday'));
     }
