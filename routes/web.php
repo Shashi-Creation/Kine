@@ -59,5 +59,12 @@ Route::get('/post/view/{id}', 'FrontController@view');
 Route::get('signup', 'FrontController@regview');
 Route::post('signup/store', 'FrontController@regstore');
 
+
 //Visitor Count
 Route::get('visitor/count', 'ReportController@view');
+//frontend register routes
+Route::get('/user', 'RegisterUserController@index');
+Route::get('user/post/view/{id}', 'RegisterUserController@view');
+Route::post('comment/add/{id}', 'RegisterUserController@commentadd');
+
+

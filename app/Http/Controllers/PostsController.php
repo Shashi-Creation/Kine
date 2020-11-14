@@ -31,7 +31,7 @@ public function store(Request $request)
     	$data->title =$request->title;
     	$data->url =$request->url;
     	$data->post_t =$request->content;
-    	$data->user_id =1;
+    	$data->user_id = Auth::id();
     	$data->status =$request->status;
 
     		if($request->hasfile('image')){
@@ -102,7 +102,6 @@ public function update(Request $request,$id)
         $data->title =$request->title;
         $data->url =$request->url;
         $data->post_t =$request->content;
-        $data->user_id =1;
         $data->status =$request->status;
 
             if($request->hasfile('image')){
