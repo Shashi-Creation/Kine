@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SB Admin 2 - Dashboard</title>
+  <title>Dr.Kine</title>
 
   <!-- Custom fonts for this template-->
   <link href="{{asset('admin_theme/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
@@ -30,7 +30,7 @@
   <div id="wrapper">
 
     <!------------------------------------------------------- Sidebar -->
-  @include('backend.admin.layouts.sidebar')
+  @include('backend.author.layouts.sidebar')
     <!----------------------------------------------------------------------------------------- End of Sidebar -->
 
     <!-- Content Wrapper -->
@@ -44,7 +44,7 @@
 
 
           <!-------------------------------------------------------- Topbar Navbar -->
-                      @include('backend.admin.layouts.navbar')
+                      @include('backend.author.layouts.navbar')
         <!-- End of Topbar------------------------------------------------------------------------------------ -->
 
         <!-- Begin Page Content------------------------------------------------------------------------------- -->
@@ -163,7 +163,7 @@
 
 
 
-<script>
+<!-- <script>
   $(document).ready(function() {
     var t = $('#dataTable').DataTable( {
         "columnDefs": [ {
@@ -180,7 +180,7 @@
         } );
     } ).draw();
 } );
-</script>
+</script> -->
 
 
 

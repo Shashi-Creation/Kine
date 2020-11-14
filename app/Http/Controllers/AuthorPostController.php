@@ -6,12 +6,12 @@ use App\Post;
 use App\User;
 use Illuminate\Http\Request;
 
-class PostsController extends Controller
+class AuthorPostController extends Controller
 {
     public function home()
     {
        
-        return view('backend.admin.post.create-post');
+        return view('backend.author.post.create-post');
     }
 
     
@@ -49,7 +49,7 @@ public function store(Request $request)
                }
 
     	$data->save();
-         return redirect('admin/post');
+         return redirect('author/post');
     }
 
 
@@ -60,7 +60,7 @@ public function store(Request $request)
     public function viewpost()
     {
         $view = Post::all();
-        return view('backend.admin.post.all-posts',compact('view'));
+        return view('backend.author.post.all-posts',compact('view'));
     }
 
     
@@ -69,7 +69,7 @@ public function store(Request $request)
      public function view($id)
     {
        $data = Post::find($id);
-        return view ('backend.admin.post.view-post',compact('data'));
+        return view ('backend.author.post.view-post',compact('data'));
         
     }
 
@@ -78,7 +78,7 @@ public function store(Request $request)
      public function edit($id)
     {
        $data = Post::find($id);
-        return view ('backend.admin.post.update-post',compact('data'));
+        return view ('backend.author.post.update-post',compact('data'));
         
     }
  
@@ -120,10 +120,11 @@ public function update(Request $request,$id)
                }
 
         $data->save();
-         return redirect('admin/post');
+         return redirect('author/post');
     }
 
 }
+
 
 
 

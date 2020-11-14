@@ -163,7 +163,7 @@
 
 
 
-<script>
+<!-- <script>
   $(document).ready(function() {
     var t = $('#dataTable').DataTable( {
         "columnDefs": [ {
@@ -180,9 +180,16 @@
         } );
     } ).draw();
 } );
-</script>
+</script> -->
+
+    <!-- <script> 
+
+              $(document).ready(function() {
+                $('dataTable').DataTable();
+            } )
 
 
+    </script> -->
 
 </body>
 
