@@ -53,7 +53,7 @@
               <ul class="site-menu js-clone-nav mr-auto d-none d-lg-block mb-0">
                 <li><a href="{{url('/')}}">Home</a></li>
                
-                <li><a href="{{url('signup')}}">Sing Up</a></li>
+                <li><a href="{{url('signup')}}">Sign Up</a></li>
                 <li><a href="{{url('login')}}">Login</a></li>
                 
               </ul>
@@ -233,16 +233,9 @@
             <!-- <h3 class="footer-heading mb-4">Navigation</h3> -->
             <ul class="list-unstyled float-left mr-5">
               <li><a href="#">About Us</a></li>
-              <li><a href="#">Advertise</a></li>
-              <li><a href="#">Careers</a></li>
-              <li><a href="#">Subscribes</a></li>
+              
             </ul>
-            <ul class="list-unstyled float-left">
-              <li><a href="#">Travel</a></li>
-              <li><a href="#">Lifestyle</a></li>
-              <li><a href="#">Sports</a></li>
-              <li><a href="#">Nature</a></li>
-            </ul>
+            
           </div>
           <div class="col-md-4">
             
