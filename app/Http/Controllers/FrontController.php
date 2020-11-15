@@ -29,9 +29,15 @@ class FrontController extends Controller
         
         $v->ip_address = $r->ip;
         $v->country    = $r->country;
-        //$country = country('us');
+        $v->country_code = $r->iso_code;
+       
         $v->save();
-//return $country->getFlag();
+         //$countryfag = country('us');
+//return $countryfag->getFlag();
+       // $r->iso_code
+
+         //$countryfag =  country($r->iso_code);
+ //return $countryfag->getFlag();
 
         return view('frontend.postindex',compact('view','first','second','third','fourth','first_t','second_t','third_t','fourth_t','fifth_t'));
     }

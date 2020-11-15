@@ -24,7 +24,10 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-//user routes
+//////////////////////////////////////Admin//////////////////////////////////////////////////
+Route::group(['middleware' => 'App\Http\Middleware\AdminCheck'], function()
+{ 
+
 Route::get('/admin/user', 'UserController@index');
 Route::get('/admin/user/create', 'UserController@create');
 Route::post('/admin/user/store', 'UserController@store');
@@ -42,6 +45,17 @@ Route::get('/admin/post/view/{id}', 'PostsController@view');
 Route::get('/admin/post/edit/{id}', 'PostsController@edit');
 Route::post('/admin/post/update/{id}', 'PostsController@update');
 
+//Visitor Count
+Route::get('admin/visitor/count', 'ReportController@view');
+Route::get('admin/post/count', 'ReportController@postview');
+});
+//////////////////////////////////////End Admin///////////////////////////////////////////////////
+
+
+//////////////////////////////////////Author//////////////////////////////////////////////////////
+Route::group(['middleware' => 'App\Http\Middleware\AdminCheck'], function()
+{ 
+Route::get('/author/user', 'UserController@index');
 //post routes(Author)
 Route::get('/author/post', 'AuthorPostController@viewpost');
 Route::get('/author/post/create', 'AuthorPostController@home');
@@ -49,6 +63,26 @@ Route::post('/author/post/store', 'AuthorPostController@store');
 Route::get('/author/post/view/{id}', 'AuthorPostController@view');
 Route::get('/author/post/edit/{id}', 'AuthorPostController@edit');
 Route::post('/author/post/update/{id}', 'AuthorPostController@update');
+
+//report
+Route::get('admin/visitor/count', 'ReportController@view');
+Route::get('admin/post/count', 'ReportController@postview');
+
+});
+//////////////////////////////////////End Author///////////////////////////////////////////////////
+
+
+
+//////////////////////////////////////loged user//////////////////////////////////////////////////////
+Route::group(['middleware' => 'App\Http\Middleware\AdminCheck'], function()
+{ 
+//frontend register routes
+Route::get('/user', 'RegisterUserController@index');
+Route::get('user/post/view/{id}', 'RegisterUserController@view');
+Route::post('comment/add/{id}', 'RegisterUserController@commentadd');
+
+});
+//////////////////////////////////////End Author///////////////////////////////////////////////////
 
 
 //frontend routes
@@ -60,11 +94,7 @@ Route::get('signup', 'FrontController@regview');
 Route::post('signup/store', 'FrontController@regstore');
 
 
-//Visitor Count
-Route::get('visitor/count', 'ReportController@view');
-//frontend register routes
-Route::get('/user', 'RegisterUserController@index');
-Route::get('user/post/view/{id}', 'RegisterUserController@view');
-Route::post('comment/add/{id}', 'RegisterUserController@commentadd');
+
+
 
 
